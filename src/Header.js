@@ -1,43 +1,39 @@
 import Logo from "./Images/logo.png";
-import './header.css';
+import './style.css';
 
 function Header() {
     return(
-        <div className="top-section">
-       <div><img src={Logo} alt="" height="auto" width="149px" /></div>
-       <div className="navbar-content">
-       <div className="dropdown">
-            <button className="navbar-buttons-2">
-              HOME
-            </button>
-            <div class="dropdown-content">
-              <a href="/#About-section">About</a>
-              <a href="/#features">Features</a>
-              <a href="/#RoadMap-section">Roadmap</a>
-              <a href="/#Team-section">Team</a>
-            </div>
+        <div>
+            <header className="header">
+      <div className="logo-box">
+        <img src={Logo} alt="logo" className="logo" />
+      </div>
+      <nav className="navigation">
+        <li className="nav-item dropdown">
+          <a href="#" className="nav-link">home</a>
+          <div className="dropdown-content">
+            <a href="#" className="nav-link">about</a>
+            <a href="#" className="nav-link">features</a>
+            <a href="#" className="nav-link">roadmap</a>
+            <a href="#" className="nav-link">team</a>
           </div>
-          <button className="navbar-buttons-2">PLAY</button>
-          <div className="dropdown">
-          <button className="navbar-buttons-2">SOCIAL</button>
-          <div class="dropdown-content">
-            <div>
-              <a href="/" target="_blank">News</a>
-            </div>
-            <a href="/#Ecosystem-section">Ecosystem</a>
+        </li>
+        <li className="nav-item"><a href="#" className="nav-link">play</a></li>
+        <li className="nav-item dropdown">
+          <a href="#" className="nav-link">social</a>
+          <div className="dropdown-content">
+            <a href="#" className="nav-link">new</a>
+            <a href="#" className="nav-link">ecosystem</a>
           </div>
-          </div>
-          <button className="navbar-buttons-2">METAVERSE</button>
-       </div>
-       <div className="navbar-content">
-          <div>
-          <button className= "navbar-buttons-2">LOGIN</button>
-          </div>
-          <div>
-            <button className="navbar-buttons-2">SIGNUP</button>
-          </div>
-       </div>
-       </div>
+        </li>
+        <li className="nav-item"><a href="#" className="nav-link">metaverse</a></li>
+      </nav>
+      <div className="nav-content">
+        <li className="nav-item login"><a href="#" className="nav-link">login</a></li>
+        <li className="nav-item"><a href="#" className="nav-link">signup</a></li>
+      </div>
+    </header>
+        </div>
     )
 }
 

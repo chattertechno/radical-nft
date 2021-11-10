@@ -6,10 +6,12 @@ import store from "./Redux/store";
 import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
 import Footer from './Footer';
+import Header from './Header';
 
 
 ReactDOM.render(
   <Provider store={store}>
+    <Header/>
     <App />
     <Footer />
   </Provider>,
