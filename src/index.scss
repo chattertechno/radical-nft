@@ -1,0 +1,367 @@
+.top-section {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #080c18;
+
+    img {
+      margin: 0 1.6rem;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-around;
+
+      .navbar-buttons {
+        background-color: transparent;
+        margin: 0 1.5rem;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: normal;
+      }
+      .navbar-buttons-2 {
+        background-color: transparent;
+        margin: 0 1.5rem;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: normal;
+        background: -webkit-linear-gradient(#ada29f, #6d6461);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .navbar-buttons-active {
+        background-color: transparent;
+        margin: 0 2rem;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: normal;
+        background: -webkit-linear-gradient(
+          0deg,
+          rgba(227, 156, 45, 1) 0%,
+          rgba(126, 48, 15, 1) 58%,
+          rgba(222, 168, 94, 1) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        &:hover .dropdown-content {
+          display: block;
+        }
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 130px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          border-radius: var(--border-radius-md);
+          left: -10px;
+        }
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          border-top: 1px solid rgba(0, 0, 0, 0.08);
+          font-size: 16px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        .dropdown-content {
+          a {
+            &:hover {
+              background-color: #ddd;
+            }
+          }
+        }
+        // .dropdown-content a &:hover {
+        //   background-color: #ddd;
+        // }
+        // .dropdown &:hover .dropdown-content {
+        //   display: block;
+        // }
+      }
+    }
+  }
+}
+
+.chess-top-section {
+  // background-image: url("../../assets/images/landingpage/navbar-background.png");
+  background-color: #080c18;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1rem 3rem 0rem 3rem;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    img {
+      margin: 0 1.6rem;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-around;
+
+      .navbar-buttons {
+        background-color: transparent;
+        margin: 0 1.5rem;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: normal;
+      }
+      .navbar-buttons-active {
+        background-color: transparent;
+        margin: 0 2rem;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: normal;
+        background: #ada29f;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  .chess-elephand {
+    position: absolute;
+    z-index: 9999;
+    left: -20px;
+    top: -4px;
+  }
+}
+
+.content {
+  // background-image: url("../../assets/images/landingpage/Rectangle\ 22.png");
+  // background-position: top;
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  // padding: 1.5rem 8rem;
+  // height: 100vh;
+  .BraniacChess-wrapper {
+    margin-top: 13rem;
+  }
+  .online-chess-game {
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(173, 162, 159, 1) 58%,
+      rgba(109, 100, 97, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 1.5rem;
+  }
+  .btnWrapper {
+    margin-top: 2rem;
+  }
+  .play-button {
+    background: linear-gradient(
+      0deg,
+      rgba(227, 156, 45, 1) 0%,
+      rgba(126, 48, 15, 1) 58%,
+      rgba(222, 168, 94, 1) 100%
+    );
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: 163px;
+    height: 59px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto;
+    &:active {
+      transform: translateY(4px) !important;
+    }
+    &:hover {
+      transition: 0.5s;
+      transform: scale(1.1);
+    }
+  }
+}
+.chess-content {
+  padding: 1rem 4rem 0rem 5rem;
+  background-color: #080c18;
+  height: 700px;
+  .chess-squar {
+    height: 340px;
+    width: 32%;
+    border: 1px solid #e39c2d;
+    .chess-image-one {
+      position: absolute;
+      z-index: 9999;
+      left: 143px;
+      top: 233px;
+    }
+    .texttwoD {
+      margin-top: 41%;
+    }
+    .play-now-btn-Active {
+      padding: 15px, 20px, 15px, 20px;
+      height: 59px;
+      width: 149px;
+      background: linear-gradient(
+        180deg,
+        #dd962b 19.44%,
+        #e39c2d 23.36%,
+        #7e300f 49.18%,
+        #dea85e 79.17%
+      );
+      border-radius: 15px;
+      color: #ffffff;
+      font-weight: 800;
+    }
+    .play-now-btn {
+      padding: 15px, 20px, 15px, 20px;
+      height: 29px;
+      width: 276px;
+      font-weight: 500;
+      font-size: 24px;
+    }
+    .chess-image-two {
+      position: absolute;
+      z-index: 9999;
+      top: 276px;
+    }
+    .chess-image-three {
+      position: absolute;
+      z-index: 9999;
+      right: 82px;
+      top: 251px;
+    }
+    .textWarfront {
+      margin-top: 30%;
+    }
+  }
+  .horsechess {
+    position: absolute;
+    z-index: 9999;
+    right: 0px;
+    top: 275px;
+  }
+  .kingchess {
+    position: absolute;
+    z-index: 9999;
+    top: 667px;
+    left: 35%;
+    // right: 20px;
+  }
+}
+
+
+// FOOTER STYLING
+
+.Footer-Container {
+    background-color: #080c18;
+    width: 88.1%;
+    height: 273px;
+    border-top: 2px solid #cca66a;
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    .Follow-us-text {
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 2rem;
+    }
+    .Icon-wrapper {
+      margin-top: 1rem;
+      .Telegram {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .Twitter {
+        width: 40px;
+        height: 40px;
+        margin: 0px 20px;
+        cursor: pointer;
+      }
+      .Youtube {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .facebook {
+        width: 38px;
+        height: 38px;
+        margin: 0px 20px;
+        cursor: pointer;
+        path {
+          fill: #314c76;
+        }
+      }
+      .Medium {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        background-color: #314c76;
+        border-radius: 50px;
+        margin-right: 20px;
+        cursor: pointer;
+        path {
+          fill: black;
+        }
+      }
+      .Linkedin {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background-color: #314c76;
+        border-radius: 30px;
+        cursor: pointer;
+        path {
+          fill: black;
+        }
+      }
+    }
+    .Footer-links-Wrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 60%;
+      .List-Heading {
+        font-size: 16px;
+        font-weight: bold;
+        background: -webkit-linear-gradient(#6d6461 100%, #ada29f 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .list {
+        margin-top: 30px;
+      }
+      .list-items {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: normal;
+        margin: 10px 0px;
+        cursor: pointer;
+      }
+    }
+  }
+  .chess-metaverse-gamefi {
+    background: linear-gradient(
+      180deg,
+      #dd962b 19.44%,
+      #e39c2d 23.36%,
+      #7e300f 49.18%,
+      #dea85e 79.17%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    margin-top: -5px;
+  }
+  

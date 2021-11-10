@@ -1,0 +1,17 @@
+.app-footer {
+	padding: 2rem 1rem 5rem;
+	text-align: center;
+	color: #fff;
+	background-color: var(--color-primary);
+	@include gradient-primary;
+
+	a {
+		margin-bottom: 1rem;
+		letter-spacing: 1px;
+		font-size: 17px;
+		font-weight: 300;
+		text-decoration: none;
+		filter: opacity(0.8);
+		color: #fff;
+	}
+}

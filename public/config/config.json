@@ -1,0 +1,18 @@
+{
+    "CONTRACT_ADDRESS" : "0x797e02aA2DC69a9a6453FfE92680d1dB9ebBd80E",
+    "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x797e02aA2DC69a9a6453FfE92680d1dB9ebBd80E",
+    "NETWORK": {
+        "NAME": "Rinkeby",
+        "SYMBOL": "Eth",
+        "ID": 4
+      },
+    "NFT_NAME": "TestGrindCollection",
+    "SYMBOL": "TGNC",
+    "MAX_SUPPLY": 1000,
+    "WEI_COST": 75000000000000000,
+    "DISPLAY_COST": 0.5,
+    "GAS_LIMIT": 285000,
+    "MARKETPLACE": "Opeansea",
+    "MARKETPLACE_LINK": "https://opensea.io/collection/testgrindcollection",
+    "SHOW_BACKGROUND": true
+}
