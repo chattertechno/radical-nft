@@ -5,8 +5,8 @@ import { connect } from "./Redux/blockchain/blockchainAction";
 import { fetchData } from "./Redux/Data/dataAction";
 import * as s from "./styles/mintStyle";
 import styled from "styled-components";
-import example from './Images/nft-test.gif';
-import example2 from './Images/nft2.gif';
+import example from './Images/5tupay.gif';
+import example2 from './Images/5tupay.gif';
 import copy1 from './Images/copy.jpg';
 
 const truncate = (input, len) =>
@@ -133,13 +133,14 @@ const claimNFTs = () => {
   console.log("Gas limit: ", totalGasLimit);
   setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
   setClaimingNft(true);
+  const to = blockchain.account;
   blockchain.smartContract.methods
-    .mint(mintAmount)
+    .mint(to, mintAmount)
     .send({
       gasLimit: String(totalGasLimit),
       to: CONFIG.CONTRACT_ADDRESS,
       from: blockchain.account,
-      value: totalCostWei,
+      value: 0.045 * 10 ** 18,
     })
     .once("error", (err) => {
       console.log(err);

@@ -1,18 +1,18 @@
 {
-    "CONTRACT_ADDRESS" : "0x797e02aA2DC69a9a6453FfE92680d1dB9ebBd80E",
-    "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x797e02aA2DC69a9a6453FfE92680d1dB9ebBd80E",
+    "CONTRACT_ADDRESS" : "0x92ba09330700cee27fc6c7fded5699f8e8c01557",
+    "SCAN_LINK": "https://etherscan.io/address/0x92ba09330700cee27fc6c7fded5699f8e8c01557",
     "NETWORK": {
-        "NAME": "Rinkeby",
+        "NAME": "Ethereum",
         "SYMBOL": "Eth",
-        "ID": 4
+        "ID": 1
       },
-    "NFT_NAME": "TestGrindCollection",
-    "SYMBOL": "TGNC",
-    "MAX_SUPPLY": 1000,
+    "NFT_NAME": "BrainiacChess2D",
+    "SYMBOL": "BRAINIAC",
+    "MAX_SUPPLY": 3000,
     "WEI_COST": 75000000000000000,
-    "DISPLAY_COST": 0.5,
+    "DISPLAY_COST": 0.045,
     "GAS_LIMIT": 285000,
     "MARKETPLACE": "Opeansea",
-    "MARKETPLACE_LINK": "https://opensea.io/collection/testgrindcollection",
+    "MARKETPLACE_LINK": "https://opensea.io/collection/brainiacchess2d",
     "SHOW_BACKGROUND": true
 }
