@@ -1,23 +1,50 @@
 .top-section {
+  .hambergur {
+    display: none;
+    font-size: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 1;
+    cursor: pointer;
+    color: #131d31;
+    @media screen and (max-width: 1181px) {
+      display: block;
+    }
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
-    background: #080c18;
+    // @media screen and (max-width: 1181px) {
+    // }
 
     img {
       margin: 0 1.6rem;
     }
-
+    .Logo {
+      width: 149px;
+      @media screen and (max-width: 581px) {
+        width: 100px;
+      }
+      @media screen and (max-width: 481px) {
+        width: 80px;
+      }
+      @media screen and (max-width: 414px) {
+        width: 50px;
+      }
+    }
     .navbar-content {
       display: flex;
       justify-content: space-around;
-
+      @media screen and (max-width: 1181px) {
+        display: none;
+      }
       .navbar-buttons {
         background-color: transparent;
         margin: 0 1.5rem;
         outline: none;
         border: none;
-        font-size: 16px;
+        font-size: 16px !important;
         font-weight: normal;
       }
       .navbar-buttons-2 {
@@ -140,14 +167,70 @@
 }
 
 .content {
-  // background-image: url("../../assets/images/landingpage/Rectangle\ 22.png");
-  // background-position: top;
-  // background-repeat: no-repeat;
-  // background-size: 100% 100%;
-  // padding: 1.5rem 8rem;
-  // height: 100vh;
   .BraniacChess-wrapper {
     margin-top: 13rem;
+    @media screen and (max-width: 1366px) {
+      margin-top: 15rem;
+    }
+    @media screen and (max-width: 1181px) {
+      margin-top: 13rem;
+    }
+    @media screen and (max-width: 1081px) {
+      margin-top: 11rem;
+    }
+    @media screen and (max-width: 781px) {
+      margin-top: 7rem;
+    }
+    @media screen and (max-width: 581px) {
+      margin-top: 7rem;
+    }
+    @media screen and (max-width: 481px) {
+      margin-top: 6rem;
+    }
+    @media screen and (max-width: 414px) {
+      margin-top: 5rem;
+      margin-left: 1rem;
+    }
+    @media screen and (max-width: 375px) {
+      margin-top: 5rem;
+      margin-left: 1rem;
+    }
+    .BraniacChess-img {
+      height: 161.44px;
+      width: 287px;
+      @media screen and (max-width: 1081px) {
+        height: 150px;
+        width: 270px;
+      }
+      @media screen and (max-width: 981px) {
+        height: 130px;
+        width: 250px;
+      }
+      @media screen and (max-width: 881px) {
+        height: 110px;
+        width: 220px;
+      }
+      @media screen and (max-width: 781px) {
+        height: 90px;
+        width: 180px;
+      }
+      @media screen and (max-width: 581px) {
+        height: 90px;
+        width: 130px;
+      }
+      @media screen and (max-width: 481px) {
+        height: auto;
+        width: 100px;
+      }
+      @media screen and (max-width: 414px) {
+        height: auto;
+        width: 80px;
+      }
+      @media screen and (max-width: 375px) {
+        height: auto;
+        width: 60px;
+      }
+    }
   }
   .online-chess-game {
     background: -webkit-linear-gradient(
@@ -161,6 +244,29 @@
     font-size: 30px;
     font-weight: bold;
     margin-top: 1.5rem;
+    @media screen and (max-width: 1366px) {
+      margin-top: 0px;
+      font-size: 25px;
+    }
+    @media screen and (max-width: 1181px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 981px) {
+      font-size: 18px;
+      margin-top: -10px;
+    }
+    @media screen and (max-width: 781px) {
+      font-size: 16px;
+      margin-top: -24px;
+    }
+    @media screen and (max-width: 581px) {
+      font-size: 12px;
+      margin-top: -40px;
+    }
+    @media screen and (max-width: 414px) {
+      font-size: 10px;
+      margin-top: -30px;
+    }
   }
   .btnWrapper {
     margin-top: 2rem;
@@ -181,6 +287,36 @@
     font-size: 24px;
     font-weight: bold;
     margin: auto;
+    @media screen and (max-width: 981px) {
+      width: 150px;
+      height: 50px;
+      font-size: 20px;
+    }
+    @media screen and (max-width: 881px) {
+      width: 130px;
+      height: 50px;
+      font-size: 18px;
+    }
+    @media screen and (max-width: 781px) {
+      width: 120px;
+      height: 40px;
+      font-size: 18px;
+    }
+    @media screen and (max-width: 781px) {
+      width: 90px;
+      height: 40px;
+      font-size: 16px;
+    }
+    @media screen and (max-width: 414px) {
+      width: 90px;
+      height: 30px;
+      font-size: 12px;
+    }
+    @media screen and (max-width: 375px) {
+      width: 60px;
+      height: 30px;
+      font-size: 12px;
+    }
     &:active {
       transform: translateY(4px) !important;
     }
@@ -190,178 +326,258 @@
     }
   }
 }
-.chess-content {
-  padding: 1rem 4rem 0rem 5rem;
-  background-color: #080c18;
-  height: 700px;
-  .chess-squar {
-    height: 340px;
-    width: 32%;
-    border: 1px solid #e39c2d;
-    .chess-image-one {
-      position: absolute;
-      z-index: 9999;
-      left: 143px;
-      top: 233px;
-    }
-    .texttwoD {
-      margin-top: 41%;
-    }
-    .play-now-btn-Active {
-      padding: 15px, 20px, 15px, 20px;
-      height: 59px;
-      width: 149px;
-      background: linear-gradient(
-        180deg,
-        #dd962b 19.44%,
-        #e39c2d 23.36%,
-        #7e300f 49.18%,
-        #dea85e 79.17%
-      );
-      border-radius: 15px;
-      color: #ffffff;
-      font-weight: 800;
-    }
-    .play-now-btn {
-      padding: 15px, 20px, 15px, 20px;
-      height: 29px;
-      width: 276px;
-      font-weight: 500;
-      font-size: 24px;
-    }
-    .chess-image-two {
-      position: absolute;
-      z-index: 9999;
-      top: 276px;
-    }
-    .chess-image-three {
-      position: absolute;
-      z-index: 9999;
-      right: 82px;
-      top: 251px;
-    }
-    .textWarfront {
-      margin-top: 30%;
-    }
-  }
-  .horsechess {
-    position: absolute;
-    z-index: 9999;
-    right: 0px;
-    top: 275px;
-  }
-  .kingchess {
-    position: absolute;
-    z-index: 9999;
-    top: 667px;
-    left: 35%;
-    // right: 20px;
-  }
-}
 
-
+//width: 200px;
+ // @media (min-width: 767px) {
+  //  width: 300px;
 // FOOTER STYLING
 
 .Footer-Container {
-    background-color: #080c18;
-    width: 88.1%;
-    height: 273px;
-    border-top: 2px solid #cca66a;
-    padding: 2.5rem 5rem;
-    display: flex;
-    justify-content: space-between;
-    .Follow-us-text {
-      font-size: 18px;
-      color: #ffffff;
-      margin-top: 2rem;
+  background-color: #080c18;
+  width: 100%;
+  height: 273px;
+  border-top: 2px solid #cca66a;
+  padding: 2.5rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 581px) {
+    padding: 2.5rem 2rem;
+  }
+  .Footer-wrapper {
+    @media screen and (max-width: 375px) {
+      margin-right: 30px;
     }
-    .Icon-wrapper {
-      margin-top: 1rem;
-      .Telegram {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-      }
-      .Twitter {
-        width: 40px;
-        height: 40px;
-        margin: 0px 20px;
-        cursor: pointer;
-      }
-      .Youtube {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-      }
-      .facebook {
-        width: 38px;
-        height: 38px;
-        margin: 0px 20px;
-        cursor: pointer;
-        path {
-          fill: #314c76;
-        }
-      }
-      .Medium {
-        width: 40px;
-        height: 40px;
-        padding: 5px;
-        background-color: #314c76;
-        border-radius: 50px;
-        margin-right: 20px;
-        cursor: pointer;
-        path {
-          fill: black;
-        }
-      }
-      .Linkedin {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        background-color: #314c76;
-        border-radius: 30px;
-        cursor: pointer;
-        path {
-          fill: black;
-        }
-      }
-    }
-    .Footer-links-Wrapper {
+  }
+  .Follow-us-text {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 2rem;
+  }
+  .Icon-wrapper {
+    margin-top: 1rem;
+    @media screen and (max-width: 581px) {
       display: flex;
-      justify-content: space-around;
-      width: 60%;
-      .List-Heading {
-        font-size: 16px;
-        font-weight: bold;
-        background: -webkit-linear-gradient(#6d6461 100%, #ada29f 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      flex-wrap: wrap;
+    }
+    .Telegram {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        width: 20px;
+        height: 20px;
       }
-      .list {
-        margin-top: 30px;
+    }
+    .Twitter {
+      width: 40px;
+      height: 40px;
+      margin: 0px 20px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        width: 20px;
+        height: 20px;
       }
-      .list-items {
-        font-size: 16px;
-        color: #ffffff;
-        font-weight: normal;
-        margin: 10px 0px;
-        cursor: pointer;
+    }
+    .Youtube {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .facebook {
+      width: 38px;
+      height: 38px;
+      margin: 0px 20px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        width: 20px;
+        height: 20px;
+        margin-left: 0px;
+      }
+      path {
+        fill: #314c76;
+      }
+    }
+    .Medium {
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+      background-color: #314c76;
+      border-radius: 50px;
+      margin-right: 20px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        width: 20px;
+        height: 20px;
+      }
+      path {
+        fill: black;
+      }
+    }
+    .Linkedin {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background-color: #314c76;
+      border-radius: 30px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        width: 20px;
+        height: 20px;
+      }
+      path {
+        fill: black;
       }
     }
   }
-  .chess-metaverse-gamefi {
-    background: linear-gradient(
-      180deg,
-      #dd962b 19.44%,
-      #e39c2d 23.36%,
-      #7e300f 49.18%,
-      #dea85e 79.17%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    font-size: 45px;
-    font-weight: 800;
-    margin-top: -5px;
+  .Footer-links-Wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    @media screen and (max-width: 481px) {
+      width: 100%;
+    }
+    .List-Heading {
+      font-size: 16px;
+      font-weight: bold;
+      background: -webkit-linear-gradient(#6d6461 100%, #ada29f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media screen and (max-width: 581px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 581px) {
+        font-size: 10px;
+      }
+      @media screen and (max-width: 507px) {
+        font-size: 8px;
+      }
+    }
+    .METAVERSE {
+      @media screen and (max-width: 414px) {
+        margin-right: 10px;
+      }
+      @media screen and (max-width: 375px) {
+        position: relative;
+        right: 15px;
+      }
+    }
+    .PLAY {
+      @media screen and (max-width: 414px) {
+        margin-right: 10px;
+      }
+    }
+    .NTF {
+      @media screen and (max-width: 375px) {
+        position: relative;
+        right: 15px;
+      }
+    }
+    .list {
+      margin-top: 30px;
+    }
+    .list-items {
+      font-size: 16px;
+      color: #ffffff;
+      font-weight: normal;
+      margin: 10px 0px;
+      cursor: pointer;
+      @media screen and (max-width: 581px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 481px) {
+        font-size: 10px;
+      }
+    }
   }
-  
+  .footerlogo {
+    @media screen and (max-width: 581px) {
+      width: 100px;
+    }
+  }
+}
+.chess-metaverse-gamefi {
+  background: linear-gradient(
+    180deg,
+    #dd962b 19.44%,
+    #e39c2d 23.36%,
+    #7e300f 49.18%,
+    #dea85e 79.17%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 800;
+  margin-top: -5px;
+  @media screen and (max-width: 1366px) {
+    font-size: 35px;
+    margin-top: 0px;
+  }
+  @media screen and (max-width: 1181px) {
+    font-size: 30px;
+    margin-top: -3.5rem;
+  }
+  @media screen and (max-width: 1081px) {
+    font-size: 25px;
+    margin-top: -4rem;
+  }
+  @media screen and (max-width: 981px) {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 781px) {
+    font-size: 19px;
+  }
+  @media screen and (max-width: 581px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 414px) {
+    font-size: 12px;
+    position: relative;
+    top: 10px;
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 300px !important;
+  background-color: #ffffff;
+  text-align: center;
+  list-style: none;
+  line-height: 2.5;
+  height: auto;
+  z-index: 0;
+  .link {
+    font-size: 14px;
+  }
+  .submenu {
+    background-color: #f1f1f1;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .home {
+    margin-top: 3rem;
+  }
+  .submenu > li > a {
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #333;
+    font-size: 14px;
+    &:hover {
+      color: blue;
+    }
+  }
+  .navbar-buttons {
+    text-decoration: none;
+    color: #0c1221;
+  }
+  .Logo {
+    width: 80px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+  }
+}

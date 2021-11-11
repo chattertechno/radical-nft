@@ -1,10 +1,24 @@
 import Logo from "./Images/logo.png";
 import './style.css';
+import { List } from 'react-bootstrap-icons';
+import React, {useState} from "react";
+import Menu from './Menu';
 
 function Header() {
+  const [hambergur, setmenu] = useState(false)
+
+const HandelMenu=()=>{
+  setmenu(!hambergur)
+}
+
     return(
-        <div>
+        <div className="back">
+          <List className="hambergur" onClick={HandelMenu}/>{
+      hambergur && <Menu />
+    }
             <header className="header">
+            
+
       <div className="logo-box">
         <img src={Logo} alt="logo" className="logo" />
       </div>
@@ -27,10 +41,12 @@ function Header() {
           </div>
         </li>
         <li className="nav-item"><a href="#" className="nav-link">metaverse</a></li>
+        <li className="nav-item"><a href="#" className="nav-link">NFT</a></li>
       </nav>
       <div className="nav-content">
         <li className="nav-item login"><a href="#" className="nav-link">login</a></li>
         <li className="nav-item"><a href="#" className="nav-link">signup</a></li>
+        
       </div>
     </header>
         </div>

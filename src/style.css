@@ -1,21 +1,30 @@
 .header {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   padding: 1.5rem 8rem;
   justify-content: space-between;
   background-color: #080c18;
   color: white;
+  width: auto;
+  
+
+  
+
 }
 
 .logo {
   width: 149px;
   margin: 0 1.6rem;
+  
+
 }
 
 .navigation,
 .nav-content {
   display: flex;
   list-style: none;
+
 }
 
 .nav-item {
@@ -69,4 +78,46 @@
 
 .flex {
   display: flex;
+}
+.hambergur {
+  display: none;
+  font-size: 2rem;
+  position: absolute;
+  right: .75rem;
+  top: 1rem;
+  z-index: 1;
+  cursor: pointer;
+  color: white;
+  background-color: #080c18;   
+
+}
+.logonew {
+  width: 149px;
+  margin: 0 1.6rem;
+  display: none;
+  left: .75rem;
+  top: 1rem;
+  background-color: #080c18;
+
+}
+.back {
+  background-color: #080c18;
+}
+
+@media (max-width: 900px) {
+  
+   .header{
+     display: none;
+   }
+   .logo {
+     width: 50px;
+   }
+   .hambergur{
+     display: flex;
+     background-color: #080c18;
+   }
+   .logonew {
+     display: flex;
+     background-color: #080c18;
+   }
 }
