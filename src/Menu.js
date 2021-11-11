@@ -12,10 +12,10 @@ const Menu = () => {
         <li onClick={() => setState(!state)} className="home" >HOME</li>
         {state === true ?
           <ul className="submenu">
-            <li><a href="/#About-section">About</a></li>
-            <li><a href="/#features">Features</a></li>
-            <li><a href="/#RoadMap-section">Roadmap</a></li>
-            <li><a href="/#Team-section">Team</a></li>
+            <li><a href="https://dev.brainiacchess.network/#About-section">About</a></li>
+            <li><a href="https://dev.brainiacchess.network/#features">Features</a></li>
+            <li><a href="https://dev.brainiacchess.network/#RoadMap-section">Roadmap</a></li>
+            <li><a href="https://dev.brainiacchess.network/#Team-section">Team</a></li>
           </ul> : ""
         }
         <li>PLAY</li>

@@ -251,7 +251,7 @@ return (
             <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
               {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
              
-            </StyledLink> <button onClick={copy}><img src={copy1} width="20px" alt="copy"></img></button> 
+            </StyledLink> <button onClick={copy}><img src={copy1} width="20px" alt="copy" className="copyadd"></img></button> 
           </s.TextDescription>
           <s.SpacerSmall />
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -413,6 +413,9 @@ return (
           We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
           successfully mint your NFT. We recommend that you don't lower the
           gas limit.
+          <br />
+          <br />
+          <br />
         </s.TextDescription>
       </s.Container>
     </s.Container>

@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="Col-1">
           <h4 className="List-Heading">HOME</h4>
           <ul className="list">
-            <li className="list-items">ABOUT</li>
+            <li className="list-items" >ABOUT</li>
             <li className="list-items">ROADMAP</li>
             <li className="list-items">TEAM</li>
           </ul>
