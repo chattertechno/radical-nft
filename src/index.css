@@ -147,13 +147,11 @@ code {
     monospace;
 }
 
-body::-webkit-scrollbar {
-  display: flex;
-}
+
 
 body {
   -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: auto; /* Firefox */
 }
 
 html {
