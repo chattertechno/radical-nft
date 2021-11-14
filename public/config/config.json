@@ -1,16 +1,16 @@
 {
-    "CONTRACT_ADDRESS" : "0x92ba09330700cee27fc6c7fded5699f8e8c01557",
-    "SCAN_LINK": "https://etherscan.io/address/0x92ba09330700cee27fc6c7fded5699f8e8c01557",
+    "CONTRACT_ADDRESS" : "0x940f3e0a8bf6cb8c09786930db51aa669612c904",
+    "SCAN_LINK": "https://bscscan.com/address/0x940f3e0a8bf6cb8c09786930db51aa669612c904",
     "NETWORK": {
-        "NAME": "Ethereum",
-        "SYMBOL": "Eth",
-        "ID": 1
+        "NAME": "Binance Smart Chain",
+        "SYMBOL": "BNB",
+        "ID": 56
       },
     "NFT_NAME": "BrainiacChess2D",
     "SYMBOL": "BRAINIAC",
     "MAX_SUPPLY": 3000,
     "WEI_COST": 75000000000000000,
-    "DISPLAY_COST": 0.045,
+    "DISPLAY_COST": 0.31,
     "GAS_LIMIT": 285000,
     "MARKETPLACE": "Opeansea",
     "MARKETPLACE_LINK": "https://opensea.io/collection/brainiacchess2d",
