@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "./Redux/blockchain/blockchainAction";
+import { connect } from "./Redux/blockchain/polygonAction";
 import { fetchData } from "./Redux/Data/dataAction";
 import * as s from "./styles/mintStyle";
 import styled from "styled-components";
@@ -100,7 +100,7 @@ color: var(--secondary);
 text-decoration: none;
 `;
 
-function App() {
+function Polygon() {
 const dispatch = useDispatch();
 const blockchain = useSelector((state) => state.blockchain);
 const data = useSelector((state) => state.data);
@@ -142,7 +142,7 @@ const claimNFTs = () => {
       gasLimit: String(totalGasLimit),
       to: CONFIG.CONTRACT_ADDRESS,
       from: blockchain.account,
-      value: 0.045 * 10 ** 18,
+      value: 100 * 10 ** 18,
     })
     .once("error", (err) => {
       console.log(err);
@@ -182,7 +182,7 @@ const getData = () => {
 };
 
 const getConfig = async () => {
-  const configResponse = await fetch("/config/config.json", {
+  const configResponse = await fetch("/config/configpoly.json", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -206,9 +206,8 @@ function copy() {
   alert("Address Copied in the ClipBoard")
 }
 return (
-  
   <div className="App-header">
-    <Header/>
+      <Header />
   <s.Screen>
     <s.Container
       flex={1}
@@ -429,4 +428,4 @@ return (
 );
 }
 
-export default App;
+export default Polygon;

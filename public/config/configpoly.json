@@ -1,0 +1,18 @@
+{
+    "CONTRACT_ADDRESS" : "0x940f3e0a8bf6cb8c09786930db51aa669612c904",
+    "SCAN_LINK": "https://polygonscan.com/address/0x940f3e0a8bf6cb8c09786930db51aa669612c904",
+    "NETWORK": {
+        "NAME": "Polygon",
+        "SYMBOL": "MATIC",
+        "ID": 137
+      },
+    "NFT_NAME": "BrainiacChess2D",
+    "SYMBOL": "BRAINIAC",
+    "MAX_SUPPLY": 3000,
+    "WEI_COST": 75000000000000000,
+    "DISPLAY_COST": 100,
+    "GAS_LIMIT": 285000,
+    "MARKETPLACE": "Opeansea",
+    "MARKETPLACE_LINK": "https://opensea.io/collection/brainiacchess2d",
+    "SHOW_BACKGROUND": true
+}
