@@ -10,7 +10,7 @@
     "SYMBOL": "BRAINIAC",
     "MAX_SUPPLY": 3000,
     "WEI_COST": 75000000000000000,
-    "DISPLAY_COST": 100,
+    "DISPLAY_COST": 120,
     "GAS_LIMIT": 285000,
     "MARKETPLACE": "Opeansea",
     "MARKETPLACE_LINK": "https://opensea.io/collection/brainiacchess2d",

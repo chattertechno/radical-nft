@@ -142,7 +142,7 @@ const claimNFTs = () => {
       gasLimit: String(totalGasLimit),
       to: CONFIG.CONTRACT_ADDRESS,
       from: blockchain.account,
-      value: 0.045 * 10 ** 18,
+      value: 0.31 * 10 ** 18,
     })
     .once("error", (err) => {
       console.log(err);

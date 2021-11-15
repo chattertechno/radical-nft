@@ -20,7 +20,7 @@ const HandelMenu=()=>{
             
 
       <div className="logo-box">
-        <img src={Logo} alt="logo" className="logo" />
+      <a href="https://dev.brainiacchess.network/">  <img src={Logo} alt="logo" href="https://dev.brain" className="logo" /> </a>
       </div>
       <nav className="navigation">
         <li className="nav-item dropdown">
