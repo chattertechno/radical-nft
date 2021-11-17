@@ -11,8 +11,6 @@ import App from './App';
 import store from "./Redux/store";
 import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
-import Footer from './Footer';
-import Header from './Header';
 import Polygon from './Polygon';
 
 

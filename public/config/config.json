@@ -1,14 +1,14 @@
 {
-    "CONTRACT_ADDRESS" : "0x940f3e0a8bf6cb8c09786930db51aa669612c904",
-    "SCAN_LINK": "https://bscscan.com/address/0x940f3e0a8bf6cb8c09786930db51aa669612c904",
+    "CONTRACT_ADDRESS" : "0xb497731fb2be33f7f8927b42d082d034834ed922",
+    "SCAN_LINK": "https://bscscan.com/address/0xb497731fb2be33f7f8927b42d082d034834ed922",
     "NETWORK": {
         "NAME": "Binance Smart Chain",
         "SYMBOL": "BNB",
         "ID": 56
       },
-    "NFT_NAME": "BrainiacChess2D",
+    "NFT_NAME": "BrainiacChessNFTs ",
     "SYMBOL": "BRAINIAC",
-    "MAX_SUPPLY": 3000,
+    "MAX_SUPPLY": 12000,
     "WEI_COST": 75000000000000000,
     "DISPLAY_COST": 0.31,
     "GAS_LIMIT": 285000,

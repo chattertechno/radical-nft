@@ -5,8 +5,8 @@ import { connect } from "./Redux/blockchain/blockchainAction";
 import { fetchData } from "./Redux/Data/dataAction";
 import * as s from "./styles/mintStyle";
 import styled from "styled-components";
-import example from './Images/5tupay.gif';
-import example2 from './Images/5tupay.gif';
+import example from './Images/5uekhm.gif';
+import example2 from './Images/5uekhm.gif';
 import copy1 from './Images/copy.jpg';
 import Footer from './Footer';
 import Header from './Header';
@@ -142,7 +142,7 @@ const claimNFTs = () => {
       gasLimit: String(totalGasLimit),
       to: CONFIG.CONTRACT_ADDRESS,
       from: blockchain.account,
-      value: 0.31 * 10 ** 18,
+      value: ((0.31 * 10 ** 18) * mintAmount)
     })
     .once("error", (err) => {
       console.log(err);
@@ -169,8 +169,8 @@ const decrementMintAmount = () => {
 
 const incrementMintAmount = () => {
   let newMintAmount = mintAmount + 1;
-  if (newMintAmount > 10) {
-    newMintAmount = 10;
+  if (newMintAmount > 20) {
+    newMintAmount = 20;
   }
   setMintAmount(newMintAmount);
 };
