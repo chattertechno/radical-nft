@@ -1,18 +1,18 @@
 {
-    "CONTRACT_ADDRESS" : "0xb497731fb2be33f7f8927b42d082d034834ed922",
-    "SCAN_LINK": "https://bscscan.com/address/0xb497731fb2be33f7f8927b42d082d034834ed922",
+    "CONTRACT_ADDRESS" : "0x36480ed95082e43daadae16a2b8b3eaef0667a5c",
+    "SCAN_LINK": "https://bscscan.com/address/0x36480ed95082e43daadae16a2b8b3eaef0667a5c",
     "NETWORK": {
         "NAME": "Binance Smart Chain",
         "SYMBOL": "BNB",
         "ID": 56
       },
-    "NFT_NAME": "BrainiacChessNFTs ",
-    "SYMBOL": "BRAINIAC",
-    "MAX_SUPPLY": 12000,
+    "NFT_NAME": "ChipNFTs",
+    "SYMBOL": "CHIP",
+    "MAX_SUPPLY": 10000,
     "WEI_COST": 75000000000000000,
-    "DISPLAY_COST": 0.31,
+    "DISPLAY_COST": 0.3,
     "GAS_LIMIT": 285000,
-    "MARKETPLACE": "Opeansea",
-    "MARKETPLACE_LINK": "https://opensea.io/collection/brainiacchess2d",
+    "MARKETPLACE": "Opensea",
+    "MARKETPLACE_LINK": "https://opensea.io/collection/ChipNFTs",
     "SHOW_BACKGROUND": true
 }
