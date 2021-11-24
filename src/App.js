@@ -22,7 +22,7 @@ background-color: orange;
 padding: 10px;
 font-weight: bold;
 color: var(--secondary-text);
-width: 100px;
+width: 140px;
 cursor: pointer;
 box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
 -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -208,6 +208,7 @@ function copy() {
 return (
   
   <div className="App-header">
+    {/* <iframe width="100px" height="100px" ></iframe> */}
     <Header/>
   <s.Screen>
     <s.Container

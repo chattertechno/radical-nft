@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "./Images/logo.png";
+import Logo from "./Images/cropped-logo.png";
 
 
 const Menu = () => {
@@ -9,31 +9,13 @@ const Menu = () => {
     <div className="menuwrapper">
       <div className="menu">
         <img src={Logo} alt="Brainiac chess" height="auto" className="Logo" />
-        <li onClick={() => setState(!state)} className="home" >HOME</li>
-        {state === true ?
-          <ul className="submenu">
-            <li><a href="https://dev.brainiacchess.network/#About-section">About</a></li>
-            <li><a href="https://dev.brainiacchess.network/#features">Features</a></li>
-            <li><a href="https://dev.brainiacchess.network/#RoadMap-section">Roadmap</a></li>
-            <li><a href="https://dev.brainiacchess.network/#Team-section">Team</a></li>
-          </ul> : ""
+        {state === true
         }
-        <li>PLAY</li>
-        <li onClick={() => { setsubmenu(!submenu) }}>SOCIAL
-          {submenu &&
-            <ul className="submenu">
-              <li>
-                <div>
-                  <a href="/" target="_blank">News</a>
-                </div></li>
-              <li>
-                <a href="/#Ecosystem-section">Ecosystem</a></li>
-            </ul>}
-        </li>
-        <li className="navbar-buttons">METAVERSE</li>
-        <li className="navbar-buttons">NFT</li>
-        <div className="navbar-buttons"> <li>LOGIN</li></div>
-        <div className="navbar-buttons" ><li>SIGNUP</li></div>
+        <li className="navbar-buttons"><a href="https://chipcash.fun/#home"><span >Home</span></a></li>
+        <li className="navbar-buttons"><a href="https://chipcash.fun/#home">Features</a></li>
+        <div className="navbar-buttons"> <a href="https://chipcash.fun/#home"><li>Tiers</li></a></div>
+        <div className="navbar-buttons" ><a href="https://chipcash.fun/#home"><li>Tokenomics</li></a></div>
+        <div className="navbar-buttons" ><a href="https://chipcash.fun/#home"><li>Roadmap</li></a></div>
       </div>
     </div>
   )

@@ -40,7 +40,8 @@
         display: none;
       }
       .navbar-buttons {
-        background-color: transparent;
+        background-color: #ffffff;
+        color: #fff;
         margin: 0 1.5rem;
         outline: none;
         border: none;
@@ -542,9 +543,10 @@
 }
 
 .menu {
-  width: 100%;
+  width: 665px;
   height: 300px !important;
-  background-color: #ffffff;
+  background-color: #1C1421;
+  color: #ffffff;
   text-align: center;
   list-style: none;
   line-height: 2.5;
@@ -572,7 +574,7 @@
   }
   .navbar-buttons {
     text-decoration: none;
-    color: #0c1221;
+    color: #fff;
   }
   .Logo {
     width: 80px;
