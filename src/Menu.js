@@ -12,10 +12,10 @@ const Menu = () => {
         {state === true
         }
         <li className="navbar-buttons"><a href="https://chipcash.fun/#home"><span >Home</span></a></li>
-        <li className="navbar-buttons"><a href="https://chipcash.fun/#home">Features</a></li>
-        <div className="navbar-buttons"> <a href="https://chipcash.fun/#home"><li>Tiers</li></a></div>
-        <div className="navbar-buttons" ><a href="https://chipcash.fun/#home"><li>Tokenomics</li></a></div>
-        <div className="navbar-buttons" ><a href="https://chipcash.fun/#home"><li>Roadmap</li></a></div>
+        <li className="navbar-buttons"><a href="https://chipcash.fun/#features">Features</a></li>
+        <div className="navbar-buttons"> <a href="https://chipcash.fun/#tiers"><li>Tiers</li></a></div>
+        <div className="navbar-buttons" ><a href="https://chipcash.fun/#tokenomics"><li>Tokenomics</li></a></div>
+        <div className="navbar-buttons" ><a href="https://chipcash.fun/#roadmap"><li>Roadmap</li></a></div>
       </div>
     </div>
   )

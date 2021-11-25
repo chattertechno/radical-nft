@@ -17,12 +17,12 @@ function Header() {
       {hambergur && <Menu />}
       <header className="header">
         <div className="logo-box">
-          <a href="https://dev.brainiacchess.network/">
+          <a href="https://chipcash.fun/">
             {" "}
             <img
               src={Logo}
               alt="logo"
-              href="https://dev.brain"
+              href="https://chipcash.fun/"
               className="logo"
             />{" "}
           </a>
@@ -36,16 +36,16 @@ function Header() {
               </a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-663">
-              <a href="#features">FEATURES</a>
+              <a href="https://chipcash.fun/#features">FEATURES</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-664">
-              <a href="#tiers">TIERS</a>
+              <a href="https://chipcash.fun/#tiers">TIERS</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-665">
-              <a href="#tokenomics">TOKENOMICS</a>
+              <a href="https://chipcash.fun/#tokenomics">TOKENOMICS</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-666">
-              <a href="#road-map">ROAD MAP</a>
+              <a href="https://chipcash.fun/#road-map">ROAD MAP</a>
             </li>
           </ul>{" "}
         </div>
