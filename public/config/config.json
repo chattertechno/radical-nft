@@ -1,13 +1,13 @@
 {
-    "CONTRACT_ADDRESS" : "0x36480ed95082e43daadae16a2b8b3eaef0667a5c",
-    "SCAN_LINK": "https://bscscan.com/address/0x36480ed95082e43daadae16a2b8b3eaef0667a5c",
+    "CONTRACT_ADDRESS" : "0xb2d498D7662c0DCb12c36030FdcF9859C1A906f2",
+    "SCAN_LINK": "https://bscscan.com/address/0xb2d498D7662c0DCb12c36030FdcF9859C1A906f2",
     "NETWORK": {
         "NAME": "Binance Smart Chain",
         "SYMBOL": "BNB",
         "ID": 56
       },
-    "NFT_NAME": "ChipNFTs",
-    "SYMBOL": "CHIP",
+    "NFT_NAME": "Radical Character",
+    "SYMBOL": "Character",
     "MAX_SUPPLY": 10000,
     "WEI_COST": 75000000000000000,
     "DISPLAY_COST": 0.3,

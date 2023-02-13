@@ -13,7 +13,8 @@ const Footer = () => {
         <div className="row">
           <div>
             <div className="copyright-text">
-            <p>Copyright © 2021 $CHIP&nbsp;All Rights Reserved.</p>
+            <p>Copyright © 2023 
+              RadicalChess&nbsp;All Rights Reserved.</p>
             </div>
           </div>
         </div>

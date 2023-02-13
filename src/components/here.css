@@ -1,0 +1,41 @@
+
+  
+  .max-w-\[250px\] {
+    max-width: 250px;
+  }
+  .max-h-\[200px\] {
+    max-height: 200px;
+  }
+ 
+
+
+.marque {
+    width: 1400px;
+    height: 150px;
+    overflow: hidden;
+}
+@media (max-width: 900px) {
+    .marque {
+        width: 400px;
+        height: 150px;
+        overflow: hidden;
+        padding-top: 30px;
+    }
+}
+/* @media screen and (min-width: 400px) {
+    .marque {
+        width: 400px;
+        height: 150px;
+        overflow: hidden;
+        padding-top: 30px;
+    }
+} */
+.marque-content {
+    display: flex;
+    list-style: none;
+    animation: scrolling 10s linear infinite;
+}
+@keyframes scrolling {
+    0% { transform: translateX(0); }
+  100% { transform: translatex(-500px); }
+}

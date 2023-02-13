@@ -10,6 +10,7 @@ import example2 from './Images/Chip_gifs.gif';
 import copy1 from './Images/copy.jpg';
 import Footer from './Footer';
 import Header from './Header';
+import Nftsample from './components/nftsample';
 
 const truncate = (input, len) =>
 input.length > len ? `${input.substring(0, len)}...` : input;
@@ -210,7 +211,9 @@ return (
   <div className="App-header">
     {/* <iframe width="100px" height="100px" ></iframe> */}
     <Header/>
+    <Nftsample/>
   <s.Screen>
+   
     <s.Container
       flex={1}
       ai={"center"}
@@ -219,10 +222,11 @@ return (
     >
       
       <s.SpacerSmall />
+      
       <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-        <s.Container flex={1} jc={"center"} ai={"center"}>
+        {/* <s.Container flex={1} jc={"center"} ai={"center"}>
           <StyledImg alt={"example"} src={example2} />
-        </s.Container>
+        </s.Container> */}
         <s.SpacerLarge />
         <s.Container
           flex={2}
@@ -388,13 +392,13 @@ return (
           <s.SpacerMedium />
         </s.Container>
         <s.SpacerLarge />
-        <s.Container flex={1} jc={"center"} ai={"center"}>
+        {/* <s.Container flex={1} jc={"center"} ai={"center"}>
           <StyledImg
             alt={"example"}
             src={example}
             style={{ transform: "scaleX(-1)" }}
           />
-        </s.Container>
+        </s.Container> */}
       </ResponsiveWrapper>
       <s.SpacerMedium />
       <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
