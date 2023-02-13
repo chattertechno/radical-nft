@@ -11,37 +11,31 @@ const Repeat_ARR = Array.from(Array(2).keys());
 
 export default function Nftsample() {
     return (
-        <div className=" ">
-            <div className="marque marque-content flex animate-marque">
+       
+            <div className="marque marque-content ">
               
-                    <React.Fragment key={6} >
+                    
                         <img
-                        className='max-h-[200px] max-w-[250px]'
                         src={king}
                         alt="rook"/>
                         <img
-                        className='max-h-[200px] max-w-[250px]'
                         src={Queen}
                         alt="rook"/>
                         <img
-                        className='max-h-[200px] max-w-[250px]'
                         src={pawn}
                         alt="rook"/>
                         <img
-                        className='max-h-[200px] max-w-[250px]'
                         src={Rook}
                         alt="rook"/>
                         <img
-                        className='max-h-[200px] max-w-[250px]'
                         src={king}
                         alt="rook"/>
                         <img
-                        className='max-h-[200px] max-w-[250px]'
                         src={knight}
                         alt="rook"/>
-                    </React.Fragment>
+                    
              
             </div>
-        </div>
+       
     )
 }

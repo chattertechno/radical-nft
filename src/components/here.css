@@ -1,13 +1,4 @@
 
-  
-  .max-w-\[250px\] {
-    max-width: 250px;
-  }
-  .max-h-\[200px\] {
-    max-height: 200px;
-  }
- 
-
 
 .marque {
     width: 1400px;
@@ -16,10 +7,10 @@
 }
 @media (max-width: 900px) {
     .marque {
-        width: 400px;
-        height: 150px;
+        width: 800px;
+        height: 200px;
         overflow: hidden;
-        padding-top: 30px;
+        padding-top: 70px;
     }
 }
 /* @media screen and (min-width: 400px) {
@@ -31,9 +22,8 @@
     }
 } */
 .marque-content {
-    display: flex;
-    list-style: none;
-    animation: scrolling 10s linear infinite;
+  display: flex;
+  animation: scrolling 10s linear infinite;
 }
 @keyframes scrolling {
     0% { transform: translateX(0); }
