@@ -37,13 +37,13 @@ function Header() {
               </a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-663">
-              <a href="https://radicalchess.com/#features">FEATURES</a>
+              <a href="https://radicalchess.com/#features">play</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-664">
-              <a href="https://radicalchess.com/#tiers">TIERS</a>
+              <a href="https://radicalchess.com/#tiers">Gallery</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-665">
-              <a href="https://radicalchess.com/#tokenomics">TOKENOMICS</a>
+              <a href="https://radicalchess.com/#tokenomics">Game</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-666">
               <a href="https://radicalchess.com/#road-map">ROAD MAP</a>

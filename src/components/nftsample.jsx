@@ -14,7 +14,6 @@ export default function Nftsample() {
        
             <div className="marque marque-content ">
               
-                    
                         <img
                         src={king}
                         alt="rook"/>
@@ -34,7 +33,6 @@ export default function Nftsample() {
                         src={knight}
                         alt="rook"/>
                     
-             
             </div>
        
     )
