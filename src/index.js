@@ -8,7 +8,7 @@ import {
 import './index.css';
 import './index.scss';
 import App from './App';
-import store from "./Redux/store";
+import { store } from "./Global/store";
 import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
 import Polygon from './Polygon';

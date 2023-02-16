@@ -7,7 +7,6 @@ import king from "../assets/images/King1.png"
 import knight from "../assets/images/Knight.png"
 import "./here.css";
 
-const Repeat_ARR = Array.from(Array(2).keys());
 
 export default function Nftsample() {
     return (
@@ -16,22 +15,22 @@ export default function Nftsample() {
               
                         <img
                         src={king}
-                        alt="rook"/>
+                        alt=""/>
                         <img
                         src={Queen}
-                        alt="rook"/>
+                        alt=""/>
                         <img
                         src={pawn}
-                        alt="rook"/>
+                        alt=""/>
                         <img
                         src={Rook}
-                        alt="rook"/>
+                        alt=""/>
                         <img
                         src={king}
-                        alt="rook"/>
+                        alt=""/>
                         <img
                         src={knight}
-                        alt="rook"/>
+                        alt=""/>
                     
             </div>
        

@@ -1,15 +1,17 @@
-import '../App.css'
-import React, { useEffect, useState} from "react";
+import "../App.css";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "../Redux/blockchain/blockchainAction";
 import { fetchData } from "../Redux/Data/dataAction";
 import Header from "../Header";
 import Footer from "../Footer";
 import Nftsample from "../components/nftsample";
-import ArenaSlider from '../components/arenaSlider';
+import ArenaSlider from "../components/arenaSlider";
 import styled from "styled-components";
-import * as s from "../styles/mintStyle"
-import copy1 from "../Images/copy.jpg"
+import * as s from "../styles/mintStyle";
+import copy1 from "../Images/copy.jpg";
+import { web3connect , disconnect} from "../Global/utils/connect";
+import { connect } from '../Global/feauters/blockchainSlice'
+
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -126,39 +128,6 @@ const Arena = () => {
     SHOW_BACKGROUND: false,
   });
 
-  const claimNFTs = () => {
-    let cost = CONFIG.WEI_COST;
-    let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
-    console.log("Cost: ", totalCostWei);
-    console.log("Gas limit: ", totalGasLimit);
-    setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
-    setClaimingNft(true);
-    const to = blockchain.account;
-    blockchain.smartContract.methods
-      .mint(to, mintAmount)
-      .send({
-        gasLimit: String(totalGasLimit),
-        to: CONFIG.CONTRACT_ADDRESS,
-        from: blockchain.account,
-        value: 0.3 * 10 ** 18 * mintAmount,
-      })
-      .once("error", (err) => {
-        console.log(err);
-        setFeedback("Sorry, something went wrong please try again later.");
-        setClaimingNft(false);
-      })
-      .then((receipt) => {
-        console.log(receipt);
-        setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
-        );
-        setClaimingNft(false);
-        dispatch(fetchData(blockchain.account));
-      });
-  };
-
   const decrementMintAmount = () => {
     let newMintAmount = mintAmount - 1;
     if (newMintAmount < 1) {
@@ -175,30 +144,17 @@ const Arena = () => {
     setMintAmount(newMintAmount);
   };
 
-  const getData = () => {
-    if (blockchain.account !== "" && blockchain.smartContract !== null) {
-      dispatch(fetchData(blockchain.account));
+
+
+  const connectWeb3 = () => {
+    if(blockchain.account) {
+        disconnect().then((data) => dispatch(connect(data)))
+    } else {
+        web3connect().then((data) => dispatch(connect(data)))
     }
-  };
+  }
 
-  const getConfig = async () => {
-    const configResponse = await fetch("/config/config.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const config = await configResponse.json();
-    SET_CONFIG(config);
-  };
 
-  useEffect(() => {
-    getConfig();
-  }, []);
-
-  useEffect(() => {
-    getData();
-  }, [blockchain.account]);
 
   function copy() {
     navigator.clipboard.writeText(CONFIG.CONTRACT_ADDRESS);
@@ -219,9 +175,6 @@ const Arena = () => {
           <s.SpacerSmall />
 
           <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-            {/* <s.Container flex={1} jc={"center"} ai={"center"}>
-          <StyledImg alt={"example"} src={example2} />
-        </s.Container> */}
             <s.SpacerLarge />
             <s.Container
               flex={2}
@@ -243,7 +196,7 @@ const Arena = () => {
                   color: "var(--accent-text)",
                 }}
               >
-                {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+                {blockchain.totalSupply} / {CONFIG.MAX_SUPPLY}
               </s.TextTitle>
               <s.TextDescription
                 style={{
@@ -264,7 +217,7 @@ const Arena = () => {
                 </button>
               </s.TextDescription>
               <s.SpacerSmall />
-              {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+              {Number(blockchain.totalSupply) >= CONFIG.MAX_SUPPLY ? (
                 <>
                   <s.TextTitle
                     style={{ textAlign: "center", color: "var(--accent-text)" }}
@@ -286,8 +239,8 @@ const Arena = () => {
                   <s.TextTitle
                     style={{ textAlign: "center", color: "var(--accent-text)" }}
                   >
-                    1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                    {CONFIG.NETWORK.SYMBOL}.
+                    1 Arena costs 0.3 ETH{" "}
+                    {CONFIG.NETWORK.SYMBOL}
                   </s.TextTitle>
                   <s.SpacerXSmall />
                   <s.TextDescription
@@ -296,8 +249,7 @@ const Arena = () => {
                     Excluding gas fees.
                   </s.TextDescription>
                   <s.SpacerSmall />
-                  {blockchain.account === "" ||
-                  blockchain.smartContract === null ? (
+                  {blockchain.account == null ? (
                     <s.Container ai={"center"} jc={"center"}>
                       <s.TextDescription
                         style={{
@@ -311,8 +263,7 @@ const Arena = () => {
                       <StyledButton
                         onClick={(e) => {
                           e.preventDefault();
-                          dispatch(connect());
-                          getData();
+                          connectWeb3()
                         }}
                       >
                         CONNECT
@@ -379,8 +330,6 @@ const Arena = () => {
                           disabled={claimingNft ? 1 : 0}
                           onClick={(e) => {
                             e.preventDefault();
-                            claimNFTs();
-                            getData();
                           }}
                         >
                           {claimingNft ? "BUSY" : "MINT"}
@@ -393,13 +342,6 @@ const Arena = () => {
               <s.SpacerMedium />
             </s.Container>
             <s.SpacerLarge />
-            {/* <s.Container flex={1} jc={"center"} ai={"center"}>
-          <StyledImg
-            alt={"example"}
-            src={example}
-            style={{ transform: "scaleX(-1)" }}
-          />
-        </s.Container> */}
           </ResponsiveWrapper>
           <s.SpacerMedium />
           <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>

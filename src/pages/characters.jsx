@@ -243,7 +243,7 @@ const Characters = () => {
                   color: "var(--accent-text)",
                 }}
               >
-                {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+               
               </s.TextTitle>
               <s.TextDescription
                 style={{
@@ -264,24 +264,7 @@ const Characters = () => {
                 </button>
               </s.TextDescription>
               <s.SpacerSmall />
-              {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-                <>
-                  <s.TextTitle
-                    style={{ textAlign: "center", color: "var(--accent-text)" }}
-                  >
-                    The sale has ended.
-                  </s.TextTitle>
-                  <s.TextDescription
-                    style={{ textAlign: "center", color: "var(--accent-text)" }}
-                  >
-                    You can still find {CONFIG.NFT_NAME} on
-                  </s.TextDescription>
-                  <s.SpacerSmall />
-                  <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-                    {CONFIG.MARKETPLACE}
-                  </StyledLink>
-                </>
-              ) : (
+              {  (
                 <>
                   <s.TextTitle
                     style={{ textAlign: "center", color: "var(--accent-text)" }}
@@ -393,13 +376,6 @@ const Characters = () => {
               <s.SpacerMedium />
             </s.Container>
             <s.SpacerLarge />
-            {/* <s.Container flex={1} jc={"center"} ai={"center"}>
-          <StyledImg
-            alt={"example"}
-            src={example}
-            style={{ transform: "scaleX(-1)" }}
-          />
-        </s.Container> */}
           </ResponsiveWrapper>
           <s.SpacerMedium />
           <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>

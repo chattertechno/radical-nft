@@ -258,11 +258,7 @@ return (
 
           </s.TextDescription>
           <s.SpacerSmall />
-          {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-            <>
-           
-            </>
-          ) : (
+          
             <>
             
               <s.SpacerXSmall />
@@ -272,8 +268,7 @@ return (
                Please Choose which NFT  you want to mint
               </s.TextDescription>
               <s.SpacerSmall />
-              {blockchain.account === "" ||
-              blockchain.smartContract === null ? (
+              
                 <s.Container ai={"center"} jc={"center"}>
                  
                   <s.SpacerSmall />
@@ -299,57 +294,13 @@ return (
                   
                   {blockchain.errorMsg !== "" ? (
                     <>
-                      <s.SpacerSmall />
-                      <s.TextDescription
-                        style={{
-                          textAlign: "center",
-                          color: "var(--accent-text)",
-                        }}
-                      >
-                        {blockchain.errorMsg}
-                      </s.TextDescription>
+                      
                     </>
                   ) : null}
                 </s.Container>
-              ) : (
-                <>
-                  
-                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <StyledRoundButton
-                      style={{ lineHeight: 0.4 }}
-                      disabled={claimingNft ? 1 : 0}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        decrementMintAmount();
-                      }}
-                    >
-                      -
-                    </StyledRoundButton>
-                    <s.SpacerMedium />
-                    <s.TextDescription
-                      style={{
-                        textAlign: "center",
-                        color: "var(--accent-text)",
-                      }}
-                    >
-                      {mintAmount}
-                    </s.TextDescription>
-                    <s.SpacerMedium />
-                    <StyledRoundButton
-                      disabled={claimingNft ? 1 : 0}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        incrementMintAmount();
-                      }}
-                    >
-                      +
-                    </StyledRoundButton>
-                  </s.Container>
-                
-                </>
-              )}
+              
             </>
-          )}
+          
           <s.SpacerMedium />
         </s.Container>
         <s.SpacerLarge />
