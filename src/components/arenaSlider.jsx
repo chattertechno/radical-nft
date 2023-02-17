@@ -4,36 +4,24 @@ import AsiaTemple from "../assets/images/arena/AsianTemple.jpg";
 import Coliseum from "../assets/images/arena/Coliseum.jpg";
 import Egypt from "../assets/images/arena/Egypt2.jpg";
 import "./arena.css";
-const imagelia = [AsiaTemple, Coliseum, Egypt, Coliseum,  Egypt, AsiaTemple]
+const imagelia = [AsiaTemple, Coliseum, Egypt, ]
+const REPEAT_ARR = Array.from(Array(4).keys());
 export default function ArenaSlider() {
   return (
     <div className="marquee">
       <div className="marquee-content">
-        {imagelia.map((images) => {
+        {REPEAT_ARR.map(ind => (
+          <React.Fragment key={ind}>
+            {imagelia.map((images) => {
           return (
             <div className="marquee-item">
               <img className="image" src={images} alt=""/>
             </div>
           )
         })}
-        {/* <div className="marquee-item"> 
-          <img src={AsiaTemple} alt="rook" />
-        </div>
-        <div className="marquee-item">
-          <img src={Coliseum} alt="rook" />
-        </div>
-        <div className="marquee-item">
-          <img src={Egypt} alt="rook" />
-        </div>
-        <div className="marquee-item"> 
-          <img src={AsiaTemple} alt="rook" />
-        </div>
-        <div className="marquee-item">
-          <img src={Coliseum} alt="rook" />
-        </div>
-        <div className="marquee-item">
-          <img src={Egypt} alt="rook" />
-        </div> */}
+          </React.Fragment>
+        ))}
+       
       </div>
     </div>
    

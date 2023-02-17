@@ -8,27 +8,25 @@ import knight from "../assets/images/Knight.png";
 import "./arena.css";
 
 const imagelia = [Rook, Queen, pawn, king, knight]
+const REPEAT_ARR = Array.from(Array(4).keys());
 
 export default function Nftsample() {
   return (
     <div className="marquee">
         <div className="marquee-content">
-        {imagelia.map((images) => {
+        {REPEAT_ARR.map(ind => (
+          <React.Fragment key={ind}>
+            {imagelia.map((images) => {
           return (
             <div className="marquee-item">
               <img className="image" src={images} alt=""/>
             </div>
           )
         })}
+          </React.Fragment>
+        ))}
         </div>
     </div>
-    // <div className="marque marque-content ">
-    //   <img src={king} alt="" />
-    //   <img src={Queen} alt="" />
-    //   <img src={pawn} alt="" />
-    //   <img src={Rook} alt="" />
-    //   <img src={king} alt="" />
-    //   <img src={knight} alt="" />
-    // </div>
+   
   );
 }
