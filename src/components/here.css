@@ -28,7 +28,7 @@
   animation: scrolling 25s linear infinite;
 }
 @keyframes scrolling {
-    0% { transform: translateX(0); }
+    0% { transform: translateX(100%); }
   100% { transform: translatex(-100%); }
   0% {
     left: 100%;

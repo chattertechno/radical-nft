@@ -7,23 +7,33 @@
 
 .marquee-content {
     display: flex;
-    animation: scrolling  15s linear infinite ;
+    animation: scrolling  10s linear infinite ;
 }
 
 .marquee-item {
     flex: 0 0 16vw;
     margin: 0 1vw;
+    display: flex;
+    width: 100%;
    
 }
 
-.marquee-item img {
-    display: flex;
-    width: 100%;
-}
 
 @keyframes scrolling {
-    0% { transform: translateX(0); }
+    0% { transform: translateX(100%); }
     100% { transform: translatex(-100%); }
 
+   
+  }
+
+  @media (max-width: 900px) {
+    .marquee-item {
+        display: flex;
+        margin-top: 60px;
+    }
+    .image {
+        width: 200px !important;
+    }
+   
    
   }

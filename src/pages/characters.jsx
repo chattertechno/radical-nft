@@ -103,7 +103,6 @@ text-decoration: none;
 const Characters = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
-  const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click mint to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
@@ -279,8 +278,7 @@ const Characters = () => {
                     Excluding gas fees.
                   </s.TextDescription>
                   <s.SpacerSmall />
-                  {blockchain.account === "" ||
-                  blockchain.smartContract === null ? (
+                  {blockchain.account === null ? (
                     <s.Container ai={"center"} jc={"center"}>
                       <s.TextDescription
                         style={{
@@ -294,8 +292,6 @@ const Characters = () => {
                       <StyledButton
                         onClick={(e) => {
                           e.preventDefault();
-                          dispatch(connect());
-                          getData();
                         }}
                       >
                         CONNECT
