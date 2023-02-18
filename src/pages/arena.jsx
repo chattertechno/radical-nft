@@ -239,8 +239,8 @@ const Arena = () => {
                   <s.TextTitle
                     style={{ textAlign: "center", color: "var(--accent-text)" }}
                   >
-                    1 Arena costs 0.3 ETH{" "}
-                    {CONFIG.NETWORK.SYMBOL}
+                    1 Arena costs 0.3 BNB{" "}
+                    BNB
                   </s.TextTitle>
                   <s.SpacerXSmall />
                   <s.TextDescription
@@ -257,7 +257,7 @@ const Arena = () => {
                           color: "var(--accent-text)",
                         }}
                       >
-                        Connect to the {CONFIG.NETWORK.NAME} network
+                        Connect to the {"Binance Smart Chain"} network
                       </s.TextDescription>
                       <s.SpacerSmall />
                       <StyledButton

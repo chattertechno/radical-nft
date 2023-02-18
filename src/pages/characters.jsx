@@ -1,7 +1,6 @@
 import '../App.css'
-import React, { useEffect, useState} from "react";
+import React, {  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "../Redux/blockchain/blockchainAction";
 import { fetchData } from "../Redux/Data/dataAction";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -125,38 +124,7 @@ const Characters = () => {
     SHOW_BACKGROUND: false,
   });
 
-  const claimNFTs = () => {
-    let cost = CONFIG.WEI_COST;
-    let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
-    console.log("Cost: ", totalCostWei);
-    console.log("Gas limit: ", totalGasLimit);
-    setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
-    setClaimingNft(true);
-    const to = blockchain.account;
-    blockchain.smartContract.methods
-      .mint(to, mintAmount)
-      .send({
-        gasLimit: String(totalGasLimit),
-        to: CONFIG.CONTRACT_ADDRESS,
-        from: blockchain.account,
-        value: 0.3 * 10 ** 18 * mintAmount,
-      })
-      .once("error", (err) => {
-        console.log(err);
-        setFeedback("Sorry, something went wrong please try again later.");
-        setClaimingNft(false);
-      })
-      .then((receipt) => {
-        console.log(receipt);
-        setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
-        );
-        setClaimingNft(false);
-        dispatch(fetchData(blockchain.account));
-      });
-  };
+
 
   const decrementMintAmount = () => {
     let newMintAmount = mintAmount - 1;
@@ -174,33 +142,10 @@ const Characters = () => {
     setMintAmount(newMintAmount);
   };
 
-  const getData = () => {
-    if (blockchain.account !== "" && blockchain.smartContract !== null) {
-      dispatch(fetchData(blockchain.account));
-    }
-  };
-
-  const getConfig = async () => {
-    const configResponse = await fetch("/config/config.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-    const config = await configResponse.json();
-    SET_CONFIG(config);
-  };
-
-  useEffect(() => {
-    getConfig();
-  }, []);
-
-  useEffect(() => {
-    getData();
-  }, [blockchain.account]);
+ 
 
   function copy() {
-    navigator.clipboard.writeText(CONFIG.CONTRACT_ADDRESS);
+    navigator.clipboard.writeText(blockchain.characterContract);
     alert("Address Copied in the ClipBoard");
   }
   return (
@@ -218,9 +163,7 @@ const Characters = () => {
           <s.SpacerSmall />
 
           <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-            {/* <s.Container flex={1} jc={"center"} ai={"center"}>
-          <StyledImg alt={"example"} src={example2} />
-        </s.Container> */}
+         
             <s.SpacerLarge />
             <s.Container
               flex={2}
@@ -251,7 +194,7 @@ const Characters = () => {
                 }}
               >
                 <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                  {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+                  {truncate(blockchain.characterContract, 15)}
                 </StyledLink>{" "}
                 <button onClick={copy}>
                   <img
@@ -268,8 +211,8 @@ const Characters = () => {
                   <s.TextTitle
                     style={{ textAlign: "center", color: "var(--accent-text)" }}
                   >
-                    1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                    {CONFIG.NETWORK.SYMBOL}.
+                    1 Character costs {blockchain.characterPrice}{" "}
+                    BNB.
                   </s.TextTitle>
                   <s.SpacerXSmall />
                   <s.TextDescription
@@ -286,7 +229,7 @@ const Characters = () => {
                           color: "var(--accent-text)",
                         }}
                       >
-                        Connect to the {CONFIG.NETWORK.NAME} network
+                        Connect to the {"Binance Smart Chain"} network
                       </s.TextDescription>
                       <s.SpacerSmall />
                       <StyledButton
@@ -358,8 +301,6 @@ const Characters = () => {
                           disabled={claimingNft ? 1 : 0}
                           onClick={(e) => {
                             e.preventDefault();
-                            claimNFTs();
-                            getData();
                           }}
                         >
                           {claimingNft ? "BUSY" : "MINT"}

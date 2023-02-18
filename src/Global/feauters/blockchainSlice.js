@@ -6,6 +6,10 @@ const initialState = {
     provider: null,
     balance: 0,
     totalSupply: 0,
+    characterContract: '0xb2d498D7662c0DCb12c36030FdcF9859C1A906f2',
+    arenaContract: '0x8Ab3E31B5E92CCD6c509606718D9eDD2c74B10E1',
+    characterPrice: 0.3,
+    arenaPrice: 0.2
     
 }
 

@@ -12,7 +12,7 @@ import newRook from "../assets/images/Rook3.png"
 import newKnight from "../assets/images/Knight1.png"
 import newBishop from "../assets/images/Bishop2.png"
 import newPawn from "../assets/images/Pawn1.png"
-import "./arena.css";
+import "./here.css";
 
 const imagelia = [Rook, Queen, pawn, king, knight, bishop, newKing, newKnight, newQueen, newRook, newBishop, newPawn]
 const REPEAT_ARR = Array.from(Array(4).keys());
