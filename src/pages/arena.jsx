@@ -1,15 +1,13 @@
 import "../App.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../Redux/Data/dataAction";
 import Header from "../Header";
 import Footer from "../Footer";
-import Nftsample from "../components/nftsample";
 import ArenaSlider from "../components/arenaSlider";
 import styled from "styled-components";
 import * as s from "../styles/mintStyle";
 import copy1 from "../Images/copy.jpg";
-import { web3connect , disconnect} from "../Global/utils/connect";
+import { web3connect , disconnect, Mint} from "../Global/utils/connect";
 import { connect } from '../Global/feauters/blockchainSlice'
 
 
@@ -239,8 +237,8 @@ const Arena = () => {
                   <s.TextTitle
                     style={{ textAlign: "center", color: "var(--accent-text)" }}
                   >
-                    1 Arena costs 0.3 BNB{" "}
-                    BNB
+                    1 Arena costs 0.2 BNB{" "}
+                    
                   </s.TextTitle>
                   <s.SpacerXSmall />
                   <s.TextDescription
@@ -330,6 +328,7 @@ const Arena = () => {
                           disabled={claimingNft ? 1 : 0}
                           onClick={(e) => {
                             e.preventDefault();
+                            Mint(2, mintAmount)
                           }}
                         >
                           {claimingNft ? "BUSY" : "MINT"}

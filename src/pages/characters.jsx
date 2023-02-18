@@ -1,7 +1,8 @@
 import '../App.css'
 import React, {  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../Redux/Data/dataAction";
+import { web3connect, disconnect, Mint } from '../Global/utils/connect';
+import { connect } from '../Global/feauters/blockchainSlice';
 import Header from "../Header";
 import Footer from "../Footer";
 import Nftsample from "../components/nftsample";
@@ -141,6 +142,13 @@ const Characters = () => {
     }
     setMintAmount(newMintAmount);
   };
+  const connectWeb3 = () => {
+    if(blockchain.account) {
+        disconnect().then((data) => dispatch(connect(data)))
+    } else {
+        web3connect().then((data) => dispatch(connect(data)))
+    }
+  }
 
  
 
@@ -193,7 +201,7 @@ const Characters = () => {
                   color: "var(--primary-text)",
                 }}
               >
-                <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+                <StyledLink target={"_blank"} href={`https://bscsan.com/address/${blockchain.characterContract}`}>
                   {truncate(blockchain.characterContract, 15)}
                 </StyledLink>{" "}
                 <button onClick={copy}>
@@ -235,6 +243,7 @@ const Characters = () => {
                       <StyledButton
                         onClick={(e) => {
                           e.preventDefault();
+                          connectWeb3()
                         }}
                       >
                         CONNECT
@@ -301,6 +310,7 @@ const Characters = () => {
                           disabled={claimingNft ? 1 : 0}
                           onClick={(e) => {
                             e.preventDefault();
+                            Mint(1, mintAmount)
                           }}
                         >
                           {claimingNft ? "BUSY" : "MINT"}
@@ -323,7 +333,7 @@ const Characters = () => {
               }}
             >
               Please make sure you are connected to the right network (
-              {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please
+              Binance Smart chain Mainnet) and the correct address. Please
               note: Once you make the purchase, you cannot undo this action.
             </s.TextDescription>
             <s.SpacerSmall />
@@ -333,7 +343,7 @@ const Characters = () => {
                 color: "var(--primary-text)",
               }}
             >
-              We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract
+              We have set the gas limit to 22850000 for the contract
               to successfully mint your NFT. We recommend that you don't lower
               the gas limit.
               <br />
