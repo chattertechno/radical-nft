@@ -194,7 +194,7 @@ const Arena = () => {
                   color: "var(--accent-text)",
                 }}
               >
-                {blockchain.totalSupply} / {CONFIG.MAX_SUPPLY}
+                Radical Chess ARENAs
               </s.TextTitle>
               <s.TextDescription
                 style={{
@@ -202,8 +202,8 @@ const Arena = () => {
                   color: "var(--primary-text)",
                 }}
               >
-                <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                  {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+                <StyledLink target={"_blank"} href={`https://bscscan.com/address/${blockchain.arenaContract}`}>
+                  {truncate(blockchain.arenaContract, 15)}
                 </StyledLink>{" "}
                 <button onClick={copy}>
                   <img

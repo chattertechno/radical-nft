@@ -193,7 +193,7 @@ const Characters = () => {
                   color: "var(--accent-text)",
                 }}
               >
-               
+               Radical Chess Characters
               </s.TextTitle>
               <s.TextDescription
                 style={{
