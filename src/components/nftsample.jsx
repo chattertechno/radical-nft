@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Rook from "../assets/images/rook.png";
 import Queen from "../assets/images/queen.png";
@@ -15,18 +15,24 @@ import newPawn from "../assets/images/Pawn1.png"
 import "./here.css";
 
 const imagelia = [Rook, Queen, pawn, king, knight, bishop, newKing, newKnight, newQueen, newRook, newBishop, newPawn]
-const REPEAT_ARR = Array.from(Array(4).keys());
+let newImagelia = imagelia.sort(function() {
+  return Math.random() - 0.5;
+})
+const REPEAT_ARR = Array.from(Array(1).keys());
 
 export default function Nftsample() {
+  useEffect(() => {
+    console.log(newImagelia);
+  }, [])
   return (
-    <div className="marquee">
-        <div className="marquee-content">
+    <div className="marqueelo">
+        <div className="marquee-contentlo">
         {REPEAT_ARR.map(ind => (
           <React.Fragment key={ind}>
-            {imagelia.map((images) => {
+            {newImagelia.map((images) => {
           return (
-            <div className="marquee-item">
-              <img className="image" src={images} alt=""/>
+            <div className="marquee-itemlo">
+              <img className="imagelo" src={images} alt=""/>
             </div>
           )
         })}
