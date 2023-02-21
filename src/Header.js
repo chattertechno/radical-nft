@@ -1,4 +1,3 @@
-import Logo from "./Images/cropped-logo.png";
 import newLogo from "./assets/images/logo.png"
 import "./style.css";
 import { List } from "react-bootstrap-icons";

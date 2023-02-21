@@ -104,7 +104,6 @@ const Characters = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click mint to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -270,7 +269,7 @@ const Characters = () => {
                           color: "var(--accent-text)",
                         }}
                       >
-                        {feedback}
+                      
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <s.Container ai={"center"} jc={"center"} fd={"row"}>

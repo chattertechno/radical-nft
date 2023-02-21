@@ -158,52 +158,8 @@ const claimNFTs = () => {
     });
 };
 
-const decrementMintAmount = () => {
-  let newMintAmount = mintAmount - 1;
-  if (newMintAmount < 1) {
-    newMintAmount = 1;
-  }
-  setMintAmount(newMintAmount);
-};
-
-const incrementMintAmount = () => {
-  let newMintAmount = mintAmount + 1;
-  if (newMintAmount > 15) {
-    newMintAmount = 15;
-  }
-  setMintAmount(newMintAmount);
-};
-
-const getData = () => {
-  if (blockchain.account !== "" && blockchain.smartContract !== null) {
-    dispatch(fetchData(blockchain.account));
-  }
-};
-
-const getConfig = async () => {
-  const configResponse = await fetch("/config/config.json", {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
-  const config = await configResponse.json();
-  SET_CONFIG(config);
-};
-
-useEffect(() => {
-  getConfig();
-}, []);
-
-useEffect(() => {
-  getData();
-}, [blockchain.account]);
 
 
-function copy() {
-  navigator.clipboard.writeText(CONFIG.CONTRACT_ADDRESS)
-  alert("Address Copied in the ClipBoard")
-}
 return (
   
   <div className="App-header">

@@ -11,7 +11,6 @@ import App from './App';
 import { store } from "./Global/store";
 import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
-import Polygon from './Polygon';
 import Arena from './pages/arena';
 import Characters from './pages/characters';
 
@@ -23,7 +22,6 @@ ReactDOM.render(
       <Route path="/" element={
       <App />
       } />
-      <Route path="/polygon" element={<Polygon/>} />
       <Route path="/arena" element={<Arena/>} />
       <Route path="/characters" element={<Characters/>}/>
     </Routes>
