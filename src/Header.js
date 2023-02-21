@@ -17,12 +17,12 @@ function Header() {
       {hambergur && <Menu />}
       <header className="header">
         <div className="logo-box">
-          <a href="https://radicalchess.com/">
+          <a href="https://radical-chess.vercel.app/">
             {" "}
             <img
               src={newLogo}
               alt="logo"
-              href="https://radicalchess.com/"
+              href="https://radical-chess.vercel.app/"
               className="logo"
             />{" "}
           </a>
@@ -31,21 +31,21 @@ function Header() {
         <div className="navbar-wrap ">
           <ul>
             <li className=" menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-729 current_page_item menu-item-899">
-              <a href="https://radicalchess.com/" aria-current="page">
+              <a href="https://radical-chess.vercel.app/" aria-current="page">
                 Home
               </a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-663">
-              <a href="https://radicalchess.com/#features">play</a>
+              <a href="https://dev-game.radicalchess.com/">play</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-664">
-              <a href="https://radicalchess.com/#tiers">Gallery</a>
+              <a href="https://radical-chess.vercel.app/#features">Features</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-665">
-              <a href="https://radicalchess.com/#tokenomics">Game</a>
+              <a href="https://radical-chess.vercel.app/#roadmap">Roadmap</a>
             </li>
             <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-666">
-              <a href="https://radicalchess.com/#road-map">ROAD MAP</a>
+              <a href="https://radical-chess.vercel.app/whitepaper">Whitepaper</a>
             </li>
           </ul>{" "}
         </div>
