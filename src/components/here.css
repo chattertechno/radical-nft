@@ -7,7 +7,7 @@
 
 .marquee-contentlo {
   display: flex;
-  animation: scrolling  20s linear infinite ;
+  animation: scrolling  10s linear infinite ;
 }
 
 .marquee-itemlo {
@@ -30,7 +30,8 @@
       display: flex;
       margin-top: 90px;
       margin: 7vw 2vw;
-      width: 120px;
+      width: 200px;
+      
     
   }
 
@@ -60,4 +61,29 @@
     height: 200px;
     max-width: 300px !important;
 }
+}
+
+/* css formobile screens */
+@media (max-width: 480px) {
+  @keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translatex(-100%); }
+  }
+
+  .marquee-contentlo {
+    display: flex;
+    animation: scrolling  25s linear infinite ;
+  }
+}
+
+@media (min-width: 481px) {
+  @keyframes scrolling {
+    0% { transform: translateX(150%); }
+    100% { transform: translatex(-150%); }
+  }
+
+  .marquee-contentlo {
+    display: flex;
+    animation: scrolling  50s linear infinite ;
+  }
 }
