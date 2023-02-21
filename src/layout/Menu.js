@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logonew from "./assets/images/logo.png"
+import Logonew from "../assets/images/logo.png"
 
 
 const Menu = () => {

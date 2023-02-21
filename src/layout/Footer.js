@@ -1,9 +1,5 @@
 import React from 'react';
-import Logo from "./Images/logo.png";
-import Youtube from "./Images/youtube.png";
-import Twitter from "./Images/twitter.png";
-import Telegram from "./Images/telegram.png";
-import { Facebook, Medium, Linkedin } from 'react-bootstrap-icons';
+
 import './footer.css';
 const Footer = () => {
   return (

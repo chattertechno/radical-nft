@@ -1,8 +1,8 @@
 import "../App.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 import ArenaSlider from "../components/arenaSlider";
 import styled from "styled-components";
 import * as s from "../styles/mintStyle";

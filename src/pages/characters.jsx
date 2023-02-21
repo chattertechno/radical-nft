@@ -3,8 +3,8 @@ import React, {  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { web3connect, disconnect, Mint } from '../Global/utils/connect';
 import { connect } from '../Global/feauters/blockchainSlice';
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 import Nftsample from "../components/nftsample";
 import styled from "styled-components";
 import * as s from "../styles/mintStyle"

@@ -1,4 +1,4 @@
-import newLogo from "./assets/images/logo.png"
+import newLogo from "../assets/images/logo.png"
 import "./style.css";
 import { List } from "react-bootstrap-icons";
 import React, { useState } from "react";

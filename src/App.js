@@ -1,17 +1,11 @@
 import './App.css';
-import React, { useEffect, useState} from "react";
+import React, {  useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "./Redux/blockchain/blockchainAction";
 import { fetchData } from "./Redux/Data/dataAction";
 import * as s from "./styles/mintStyle";
 import styled from "styled-components";
-import copy1 from './Images/copy.jpg';
-import Footer from './Footer';
-import Header from './Header';
-import Nftsample from './components/nftsample';
-
-const truncate = (input, len) =>
-input.length > len ? `${input.substring(0, len)}...` : input;
+import Footer from './layout/Footer';
+import Header from './layout/Header';
 
 export const StyledButton = styled.button`
 padding: 10px;
