@@ -1,5 +1,5 @@
 import "../App.css";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
@@ -103,11 +103,10 @@ export const StyledLink = styled.a`
 const Arena = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
-  const data = useSelector((state) => state.data);
-  const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click mint to mint your NFT.`);
+  const [claimingNft ] = useState(false);
+  const [feedback ] = useState(`Click mint to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
-  const [CONFIG, SET_CONFIG] = useState({
+  const [CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
     NETWORK: {

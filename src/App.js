@@ -1,7 +1,6 @@
 import './App.css';
-import React, {  useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "./Redux/Data/dataAction";
+import React, { useState} from "react";
+import { useSelector } from "react-redux";
 import * as s from "./styles/mintStyle";
 import styled from "styled-components";
 import Footer from './layout/Footer';
@@ -94,13 +93,8 @@ text-decoration: none;
 `;
 
 function App() {
-const dispatch = useDispatch();
 const blockchain = useSelector((state) => state.blockchain);
-const data = useSelector((state) => state.data);
-const [claimingNft, setClaimingNft] = useState(false);
-const [feedback, setFeedback] = useState(`Click mint to mint your NFT.`);
-const [mintAmount, setMintAmount] = useState(1);
-const [CONFIG, SET_CONFIG] = useState({
+const [CONFIG] = useState({
   CONTRACT_ADDRESS: "",
   SCAN_LINK: "",
   NETWORK: {
@@ -119,38 +113,6 @@ const [CONFIG, SET_CONFIG] = useState({
   SHOW_BACKGROUND: false,
 });
 
-const claimNFTs = () => {
-  let cost = CONFIG.WEI_COST;
-  let gasLimit = CONFIG.GAS_LIMIT;
-  let totalCostWei = String(cost * mintAmount);
-  let totalGasLimit = String(gasLimit * mintAmount);
-  console.log("Cost: ", totalCostWei);
-  console.log("Gas limit: ", totalGasLimit);
-  setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
-  setClaimingNft(true);
-  const to = blockchain.account;
-  blockchain.smartContract.methods
-    .mint(to, mintAmount)
-    .send({
-      gasLimit: String(totalGasLimit),
-      to: CONFIG.CONTRACT_ADDRESS,
-      from: blockchain.account,
-      value: ((0.3 * 10 ** 18) * mintAmount)
-    })
-    .once("error", (err) => {
-      console.log(err);
-      setFeedback("Sorry, something went wrong please try again later.");
-      setClaimingNft(false);
-    })
-    .then((receipt) => {
-      console.log(receipt);
-      setFeedback(
-        `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
-      );
-      setClaimingNft(false);
-      dispatch(fetchData(blockchain.account));
-    });
-};
 
 
 
