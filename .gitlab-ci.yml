@@ -1,0 +1,51 @@
+stages:
+    - install
+    - build
+    - deploy
+
+install:
+    image: node:14.19.3
+    stage: install
+    artifacts:
+        untracked: true
+    cache:
+        key:
+            files:
+                - package.json
+                - yarn.lock
+        paths:
+            - node_modules/
+    only:
+        - main
+    script:
+        - yarn install
+
+build:production:
+    image: node:14.19.3
+    stage: build
+    artifacts:
+        untracked: true
+    only:
+        - main
+    script:
+        - yarn build
+
+deploy:production:
+    stage: deploy
+    image: docker:stable
+    environment:
+        name: production
+        url: https://mint.radicalchess.com
+    only:
+        - main
+    dependencies:
+        - build:production
+    script:
+        - echo "Deploying application..."
+        - apk add --no-cache rsync openssh
+        - mkdir -p ~/.ssh
+        - echo "$SSH_PRIVATE_KEY" >> private.key
+        - chmod 600 private.key
+        - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+        - rsync -rav --delete -e "ssh -i private.key" build/ $URL:/var/www/radicalchess/mint
+        - echo "Application successfully deployed."
