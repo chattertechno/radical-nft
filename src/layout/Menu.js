@@ -3,7 +3,7 @@ import Logonew from "../assets/images/logo.png"
 
 
 const Menu = () => {
-  const [state, setState] = useState(false);
+  const [state] = useState(false);
   return (
     <div className="menuwrapper">
       <div className="menu">
