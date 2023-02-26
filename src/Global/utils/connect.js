@@ -7,7 +7,6 @@ import { store } from "../store"
 
 
 export const web3connect = async () => {
-    let provider;
 
 
     const providerOptions = {
@@ -82,7 +81,7 @@ export const disconnect = async () => {
 
 export const Mint = async (type, mintAmount) => {
     // 1 == characters,  2 == arena
-    if (type == 1) {
+    if (type === 1) {
         const web3 = new Web3(store.getState().blockchain.provider)
         const contract = new web3.eth.Contract(CharAbi, store.getState().blockchain.characterContract)
         let price = await contract.methods.fixedPrice().call()

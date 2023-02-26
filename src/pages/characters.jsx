@@ -103,9 +103,9 @@ text-decoration: none;
 const Characters = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
-  const [claimingNft, setClaimingNft] = useState(false);
+  const [claimingNft] = useState(false);
   const [mintAmount, setMintAmount] = useState(1);
-  const [CONFIG, SET_CONFIG] = useState({
+  const [CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
     NETWORK: {
