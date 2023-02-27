@@ -104,7 +104,6 @@ const Arena = () => {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [claimingNft ] = useState(false);
-  const [feedback ] = useState(`Click mint to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -265,31 +264,16 @@ const Arena = () => {
                       >
                         CONNECT
                       </StyledButton>
-                      {blockchain.errorMsg !== "" ? (
-                        <>
-                          <s.SpacerSmall />
-                          <s.TextDescription
-                            style={{
-                              textAlign: "center",
-                              color: "var(--accent-text)",
-                            }}
-                          >
-                            {blockchain.errorMsg}
-                          </s.TextDescription>
-                        </>
-                      ) : null}
+                     
                     </s.Container>
                   ) : (
                     <>
-                      <s.TextDescription
-                        style={{
-                          textAlign: "center",
-                          color: "var(--accent-text)",
-                        }}
-                      >
-                        {feedback}
-                      </s.TextDescription>
+                      
                       <s.SpacerMedium />
+                      {blockchain.arenaWlenabled === true ? <>
+                      {blockchain.arenaWl === false ? <>
+                      <h1>Not Whitelisted</h1>
+                      </> : <>
                       <s.Container ai={"center"} jc={"center"} fd={"row"}>
                         <StyledRoundButton
                           style={{ lineHeight: 0.4 }}
@@ -333,6 +317,53 @@ const Arena = () => {
                           {claimingNft ? "BUSY" : "MINT"}
                         </StyledButton>
                       </s.Container>
+                      </>}
+                       </> : <>
+                      <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                        <StyledRoundButton
+                          style={{ lineHeight: 0.4 }}
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            decrementMintAmount();
+                          }}
+                        >
+                          -
+                        </StyledRoundButton>
+                        <s.SpacerMedium />
+                        <s.TextDescription
+                          style={{
+                            textAlign: "center",
+                            color: "var(--accent-text)",
+                          }}
+                        >
+                          {mintAmount}
+                        </s.TextDescription>
+                        <s.SpacerMedium />
+                        <StyledRoundButton
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            incrementMintAmount();
+                          }}
+                        >
+                          +
+                        </StyledRoundButton>
+                      </s.Container>
+                      <s.SpacerSmall />
+                      <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                        <StyledButton
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            Mint(2, mintAmount)
+                          }}
+                        >
+                          {claimingNft ? "BUSY" : "MINT"}
+                        </StyledButton>
+                      </s.Container>
+                      </> }
+                      
                     </>
                   )}
                 </>

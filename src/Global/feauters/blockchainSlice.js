@@ -11,7 +11,11 @@ const initialState = {
     characterPrice: 0.1,
     arenaPrice: 0.2,
     arenaTsupply: 0,
-    charTsupply: 0
+    charTsupply: 0,
+    characterWl: false,
+    charWlenabled: false,
+    arenaWlenabled: false,
+    arenaWl: false
     
 }
 
@@ -25,10 +29,18 @@ export const blockchainSlice = createSlice({
                 state.balance = action.payload.balance
                 state.provider = action.payload.provider
                 state.totalSupply = action.payload.totalSupply
+                state.characterWl = action.payload.characterWl
+                state.arenaWl = action.payload.arenaWl
+                state.charWlenabled  = action.payload.charWlenabled
+                state.arenaWlenabled = action.payload.arenaWlenabled
             } else {
                 state.account = null
                 state.balance = 0
                 state.totalSupply = 0
+                state.arenaWl = false
+                state.characterWl = false
+                state.charWlenabled = false
+                state.arenaWlenabled = false
             }
         }
     }
