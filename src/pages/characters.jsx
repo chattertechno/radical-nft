@@ -247,31 +247,17 @@ const Characters = () => {
                       >
                         CONNECT
                       </StyledButton>
-                      {blockchain.errorMsg !== "" ? (
-                        <>
-                          <s.SpacerSmall />
-                          <s.TextDescription
-                            style={{
-                              textAlign: "center",
-                              color: "var(--accent-text)",
-                            }}
-                          >
-                            {blockchain.errorMsg}
-                          </s.TextDescription>
-                        </>
-                      ) : null}
+                     
                     </s.Container>
                   ) : (
                     <>
-                      <s.TextDescription
-                        style={{
-                          textAlign: "center",
-                          color: "var(--accent-text)",
-                        }}
-                      >
-                      
-                      </s.TextDescription>
+                     
                       <s.SpacerMedium />
+
+                      {blockchain.charWlenabled === true ? <>
+                      {blockchain.characterWl === false ? <>
+                      <h1>Not Whitelisted</h1>
+                      </> : <>
                       <s.Container ai={"center"} jc={"center"} fd={"row"}>
                         <StyledRoundButton
                           style={{ lineHeight: 0.4 }}
@@ -315,6 +301,52 @@ const Characters = () => {
                           {claimingNft ? "BUSY" : "MINT"}
                         </StyledButton>
                       </s.Container>
+                      </>}
+                       </> : <>
+                      <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                        <StyledRoundButton
+                          style={{ lineHeight: 0.4 }}
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            decrementMintAmount();
+                          }}
+                        >
+                          -
+                        </StyledRoundButton>
+                        <s.SpacerMedium />
+                        <s.TextDescription
+                          style={{
+                            textAlign: "center",
+                            color: "var(--accent-text)",
+                          }}
+                        >
+                          {mintAmount}
+                        </s.TextDescription>
+                        <s.SpacerMedium />
+                        <StyledRoundButton
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            incrementMintAmount();
+                          }}
+                        >
+                          +
+                        </StyledRoundButton>
+                      </s.Container>
+                      <s.SpacerSmall />
+                      <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                        <StyledButton
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            Mint(1, mintAmount)
+                          }}
+                        >
+                          {claimingNft ? "BUSY" : "MINT"}
+                        </StyledButton>
+                      </s.Container>
+                      </> }
                     </>
                   )}
                 </>
