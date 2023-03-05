@@ -39,11 +39,25 @@ export const web3connect = async () => {
         let balance = await web3.eth.getBalance(accounts[0]);
         let account = accounts[0]
 
+        const characterContract = new web3.eth.Contract(CharAbi, store.getState().blockchain.characterContract)
+
+        const characterWl = await characterContract.methods.whitelisted(account).call()
+        const charWlenabled = await characterContract.methods.useWhitelist().call()
+
+        const arenaContract = new web3.eth.Contract(Abi, store.getState().blockchain.arenaContract)
+
+        const arenaWl = await arenaContract.methods.whitelisted(account).call()
+        const arenaWlenabled = await arenaContract.methods.useWhitelist().call()
+
         return {
             account,
             totalSupply,
             balance,
-            provider
+            provider,
+            characterWl,
+            arenaWl,
+            charWlenabled,
+            arenaWlenabled
         }
     } catch (err) {
         console.log(err)
@@ -85,9 +99,9 @@ export const Mint = async (type, mintAmount) => {
         const web3 = new Web3(store.getState().blockchain.provider)
         const contract = new web3.eth.Contract(CharAbi, store.getState().blockchain.characterContract)
         let price = await contract.methods.fixedPrice().call()
-        const name = await contract.methods.name().call()
-        console.log(name)
-        console.log(price)
+        //const name = await contract.methods.name().call()
+       // console.log(name)
+        //console.log(price)
         //price /= 10**18
         try {
             await contract.methods.batchMintCharacter(mintAmount).send({
@@ -101,9 +115,9 @@ export const Mint = async (type, mintAmount) => {
         const web3 = new Web3(store.getState().blockchain.provider)
         const contract = new web3.eth.Contract(Abi, store.getState().blockchain.arenaContract)
         let price = await contract.methods.fixedPrice().call()
-        const name = await contract.methods.name().call()
-        console.log(name)
-        console.log(price)
+       // const name = await contract.methods.name().call()
+       // console.log(name)
+        //console.log(price)
         try {
             await contract.methods.batchMintArena(mintAmount).send({
                 from: store.getState().blockchain.account,
